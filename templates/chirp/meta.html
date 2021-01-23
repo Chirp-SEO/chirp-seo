@@ -1,0 +1,130 @@
+<title><perch:seo id="title" type="hidden"></title>
+<meta name="description" content="<perch:seo id="description" label="Description" type="textarea" html words="170" striptags append="..." />" />
+
+<perch:if exists="robots">
+  <meta name="robots" content="<perch:seo id="robots" type="hidden" />">
+</perch:if>
+
+<link href="<perch:seo id="domain" type="hidden">" rel="home">
+<link rel="canonical" href="<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">">
+
+<perch:if exists="og_title">
+  <meta property="og:locale" content="<perch:seo id="lang" type="hidden">" />
+  <meta property="og:site_name" content="<perch:seo id="site_name" type="hidden">">
+  <meta property="og:url" content="<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">">
+  <meta property="og:title" content="<perch:seo id="og_title" type="text" escape="true">">
+
+  <perch:if exists="og_type">
+    <meta property="og:type" content="<perch:seo id="og_type" type="select">">
+  </perch:if>
+
+  <perch:if exists="og_description">
+    <meta property="og:description" content="<perch:seo id="og_description" type="textarea" escape="true">">
+  </perch:if>
+  
+  <perch:if exists="og_image">
+    <meta property="og:image" content="<perch:seo id="domain" type="hidden"><perch:seo id="og_image" type="image">">
+  </perch:if>
+  
+  <perch:if exists="og_author">
+  <meta property="article:author" content="<perch:seo id="og_author" type="hidden">">
+  </perch:if>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="<perch:seo id="og_title" type="text" escape="true">">
+
+  <perch:if exists="twitter_name">
+    <meta name="twitter:site" content="<perch:seo id="twitter_name" type="hidden">">
+  </perch:if>
+    
+  <perch:if exists="og_description">
+    <meta name="twitter:description" content="<perch:seo id="og_description" type="textarea">">
+  </perch:if>
+  <perch:if exists="og_image">
+    <meta property="twitter:image" content="<perch:seo id="domain" type="hidden"><perch:seo id="og_image" type="image">">
+  </perch:if>
+
+  <perch:if exists="og_image">
+    <meta name="twitter:url" content="<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">">
+  </perch:if>
+</perch:if>
+
+<script type="application/ld+json">
+{ 
+  "@context":"https://schema.org",
+  "@graph":[ 
+     { 
+        "@type":"Organization",
+        "@id":"<perch:seo id="domain" type="hidden">#organization",
+        "name":"<perch:seo id="site_name" type="hidden">",
+        "url":"<perch:seo id="domain" type="hidden">",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "<perch:seo id="domain" type="hidden"><perch:seo id="publisher_logo" type="image">"
+        }
+     },
+     { 
+        "@type":"WebSite",
+        "@id":"<perch:seo id="domain" type="hidden">#website",
+        "url":"<perch:seo id="domain" type="hidden">",
+        "name":"<perch:seo id="site_name" type="hidden">",
+        "publisher":{ 
+           "@id":"<perch:seo id="domain" type="hidden">#organization"
+        }
+     },
+     { 
+        "@type":"WebPage",
+        "@id":"<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">#webpage",
+        "url":"<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">",
+        "inLanguage":"<perch:seo id="lang" type="hidden">",
+        "name":"<perch:seo id="og_title" type="text" escape="true">",
+        "isPartOf":{ 
+           "@id":"<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">#website"
+        },
+        "about":{ 
+           "@id":"<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">#organization"
+        },
+        "primaryImageOfPage":{ 
+           "@id":"<perch:seo id="domain" type="hidden"><perch:seo id="page_url" type="hidden">#primaryimage"
+        },
+        "description":"<perch:seo id="og_description" type="textarea" escape="true">"
+     }
+  ]
+}
+</script>
+
+<perch:if id="og_type" value="article">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://google.com/article"
+    },
+    "headline": "<perch:seo id="title" type="hidden">",
+    "image": [
+      "<perch:seo id="domain" type="hidden"><perch:seo id="og_image" type="image">"
+    ],
+    "datePublished": "<perch:seo id="date_published" type="date" format="Y-m-d\TG:i:s.uO">",
+    "dateModified": "<perch:seo id="date_modified" type="date" format="Y-m-d\TG:i:s.uO">",
+    "author": {
+      "@type": "Person",
+      "name": "<perch:seo id="author" type="hidden">"
+    },
+    "publisher": {
+      "@type":"Organization",
+      "@id":"<perch:seo id="domain" type="hidden">#organization",
+      "name":"<perch:seo id="site_name" type="hidden">",
+      "url":"<perch:seo id="domain" type="hidden">",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<perch:seo id="domain" type="hidden"><perch:seo id="publisher_logo" type="image">"
+      }
+    },
+    "description": "<perch:seo id="description" type="textarea" html striptags />"
+  }
+  </script>
+</perch:if>
+
+<perch:seo id="schema" label="Rich Snippet Schema" type="textarea" html="true" divider-before="Rich Snippet Schema">

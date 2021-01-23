@@ -1,0 +1,15 @@
+{
+	"config": {
+    "vendor-dir": "lib/vendor",
+    "preferred-install": "dist",
+    "platform": {
+      "php": "5.6"
+    }
+  },
+  "require": {
+    "davechild/textstatistics": "^1.0",
+    "ryangittings/pagespeed": "dev-master",
+    "ryangittings/didom": "dev-master"
+  },
+  "minimum-stability": "dev"
+}

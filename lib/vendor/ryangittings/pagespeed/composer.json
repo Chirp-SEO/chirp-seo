@@ -1,0 +1,24 @@
+{
+    "name": "ryangittings/pagespeed",
+    "type": "library",
+    "description": "A PHP library to interact with the PageSpeed Insights API",
+    "keywords": ["PageSpeed", "Insights", "API", "Google"],
+    "homepage": "https://github.com/ryangittings/pagespeed",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.5",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "authors": [
+        {
+          "name": "Ryan Gittings",
+          "email": "ryan@madebykingfisher.co.uk"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "PageSpeed": "src/",
+            "PageSpeed\\Tests": "tests/"
+        }
+    }
+}
